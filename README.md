@@ -63,13 +63,28 @@ isn't, so we build the real thing instead of a fantasy.
 ### Phase 1 — Script engine ✅ DONE
 This repo. The "what to say" layer.
 
-### Phase 2 — Clip finder �üöß BUILDABLE (needs your machine)
-Feed in a longer video, auto-rank the best moments, export vertical clips.
-Realistic approach: transcribe the audio (Whisper), score segments by
-energy/loudness + punchy lines, cut the top moments with `ffmpeg`, add
-captions. This is genuinely doable — but it needs **your local machine** with
-the video files and ffmpeg installed, because this cloud container is wiped
-between sessions and can't hold your media library.
+### Phase 2 — Clip finder ✅ DONE (`clip_finder.py`)
+Feed in a longer video → it ranks the loudest/highest-energy moments, cuts the
+top ones into vertical 9:16 clips ready to post. Pure Python stdlib; the only
+requirement is **ffmpeg** installed on your machine.
+
+```bash
+python clip_finder.py raw.mp4            # top 3 vertical clips → ./clips/
+python clip_finder.py raw.mp4 -n 5       # top 5 moments
+python clip_finder.py raw.mp4 --len 25   # ~25s clips
+python clip_finder.py raw.mp4 --dry-run  # just show the moments, cut nothing
+```
+
+> Runs on **your machine**, not the cloud — it needs your video files and
+> ffmpeg. Install ffmpeg first: `brew install ffmpeg` (macOS),
+> `winget install ffmpeg` (Windows), `sudo apt install ffmpeg` (Linux).
+
+**The full local pipeline:**
+```bash
+python clip_finder.py raw.mp4 -n 5   # cut 5 clips from a long video
+python generate.py -n 5              # generate 5 captions + hashtag sets
+# pair each clip with a caption → post (one tap each)
+```
 
 ### Phase 3 — Auto-posting ⚠️ READ THIS
 Two hard walls, and I won't pretend they aren't there:
