@@ -8,6 +8,30 @@ Built and trained separately from your day-to-day. This is your second engine.
 
 ---
 
+## The toolkit (all working today)
+
+| Tool | What it does | Needs |
+|------|-------------|-------|
+| `generate.py` | Writes scripts, captions, hashtags | Python only |
+| `clip_finder.py` | Long video → best vertical clips | Python + ffmpeg |
+| `make_post.py` | Burns hook caption onto a clip + writes post text | Python + ffmpeg |
+| `scheduler.py` | Queues clips into a daily posting routine | Python only |
+
+### The full pipeline (one channel, end to end)
+
+```bash
+py clip_finder.py raw.mp4 -n 5            # 1. cut 5 clips from a long video
+py make_post.py clips/raw_clip1.mp4      # 2. add caption overlay + post text (repeat per clip)
+py scheduler.py add clips/raw_clip1_post.mp4   # 3. queue each finished post
+py scheduler.py plan --per-day 2 --days 7      # 4. spread them over a week
+py scheduler.py today                    # 5. every day: post what it lists, then `done <id>`
+```
+
+> ⚠️ **On Windows use `py`, not `python`.** All examples below say `python`;
+> just swap in `py`.
+
+---
+
 ## What's here now
 
 ### `generate.py` — script generator ✅ (working today)
@@ -51,6 +75,49 @@ The script tool is the easy part. Here's how the money actually shows up:
 6. **Money turns on at scale.** TikTok Creator Rewards needs 10k followers +
    100k views/30 days. YouTube Shorts needs Partner Program thresholds. So the
    first job is **reach**, not monetization. Don't quit before the door opens.
+
+---
+
+## ⚠️ Where the clips come from (read before you repost anything)
+
+The plan of "pull viral TikToks/YouTube clips and repost them" has a wall, and
+it's the difference between a channel that earns and one that gets killed:
+
+- **You can't monetize content you don't own.** TikTok Creator Rewards and the
+  YouTube Partner Program both require *original* content. Reuploading someone
+  else's clip = no payout, even if it goes viral.
+- **Reposting gets struck and banned.** Copyright owners file claims; platforms
+  remove videos and ban repeat-offender accounts. Pure "repost" channels live
+  on borrowed time.
+
+**The version that actually works — and what these tools are built for:**
+
+1. **Film your own** gym/discipline b-roll on your phone (you train anyway —
+   record it). `clip_finder.py` pulls the best moments automatically.
+2. **Use royalty-free / Creative-Commons footage** you're licensed to use:
+   Pexels, Pixabay, Mixkit (free), or a stock subscription. Your voice + your
+   edit + your script = original content you own and can monetize.
+3. **Your edge is the words and the edit, not the raw clip.** The script engine
+   is your moat — the same gym footage with *your* hook is yours.
+
+So: source footage you're allowed to use, run it through the pipeline, and the
+output is monetizable and ban-proof. That's the whole strategy.
+
+---
+
+## Scaling to multiple channels (your goal)
+
+Nail ONE channel to ~10k followers first — that proves the system. Then cloning
+is mechanical:
+
+1. **Copy the playbook, swap the niche.** Duplicate `content_banks.py` themes
+   for a new lane (e.g. `mindset/`, `gym/`, `hustle/`). Same tools, new voice.
+2. **One queue per channel.** `scheduler.py --file gym_queue.json` keeps each
+   channel's routine separate.
+3. **Stagger, don't split.** Run channel #2 only once #1 is on autopilot
+   (batched + scheduled). Two half-built channels beat zero finished ones.
+4. **Cross-post the winners.** A clip that pops on TikTok goes to Shorts +
+   Reels for free reach before you make anything new.
 
 ---
 
