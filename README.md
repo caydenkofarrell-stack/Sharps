@@ -8,13 +8,16 @@ Your own venture. Run it on your machine, build the brand, scale the channels.
 
 ---
 
+## ⚡ New here? Read [`QUICKSTART.md`](QUICKSTART.md) — every command, in order.
+
 ## The toolkit (all working today)
 
 | Tool | What it does | Needs |
 |------|-------------|-------|
-| `generate.py` | Writes scripts, captions, hashtags | Python only |
+| `fetch_footage.py` | Download source video from a URL into `footage/` | Python + yt-dlp |
 | `clip_finder.py` | Long video → best vertical clips | Python + ffmpeg |
 | `make_post.py` | Burns hook caption onto a clip + writes post text | Python + ffmpeg |
+| `generate.py` | Writes scripts, captions, hashtags | Python only |
 | `scheduler.py` | Queues clips into a daily posting routine | Python only |
 
 ### The full pipeline (one channel, end to end)
