@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sharps — Scheduler (your posting routine).
+LockedIn — Scheduler (your posting routine).
 
 Keeps a simple queue of posts and builds a posting calendar so you always know
 exactly what to post and when. Pure Python stdlib — no dependencies, runs

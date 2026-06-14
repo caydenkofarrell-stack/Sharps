@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sharps — Clip Finder (Phase 2).
+LockedIn — Clip Finder (Phase 2).
 
 Feed in a longer video. It finds the most high-energy moments (by audio
 loudness), cuts them into vertical 9:16 clips ready for TikTok / Shorts / Reels,

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sharps — Make Post (editor).
+LockedIn — Make Post (editor).
 
 Turns a raw vertical clip into a post-ready video: burns a bold hook caption
 onto it and writes a matching post-text file (caption + hashtags) next to it.

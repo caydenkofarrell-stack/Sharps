@@ -1,10 +1,10 @@
-# Sharps — Discipline/Mindset Content Engine
+# LockedIn — Discipline/Mindset Content Engine
 
 Tools to grow an intense **discipline / mental-toughness** channel (TikTok,
 YouTube Shorts, Reels) in the "no excuses, stay hard" lane — built for
-**platform payouts + reposting**.
+**platform payouts**.
 
-Built and trained separately from your day-to-day. This is your second engine.
+Your own venture. Run it on your machine, build the brand, scale the channels.
 
 ---
 
