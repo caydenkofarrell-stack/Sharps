@@ -1,0 +1,22 @@
+# Generated content batches
+batch.md
+batch*.md
+*.batch.md
+
+# Media (keep your videos/clips out of git)
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+clips/
+exports/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
