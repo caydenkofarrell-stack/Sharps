@@ -10,10 +10,30 @@ Your own venture. Run it on your machine, build the brand, scale the channels.
 
 ## ⚡ New here? Read [`QUICKSTART.md`](QUICKSTART.md) — every command, in order.
 
+## 🚀 The one command that does everything
+
+```bash
+py pipeline.py footage/yourvideo.mp4 -n 6
+```
+
+One video in → **6 finished, captioned, scheduled posts** out, in about a minute.
+That's the whole machine in a single line. Everything below is the parts it runs.
+
+## ✅ First time? Verify your machine in 10 seconds
+
+```bash
+py selftest.py
+```
+
+Runs the entire system on a throwaway clip and prints `ALL SYSTEMS GO` when
+you're ready. Do this once before you start so nothing wastes your time.
+
 ## The toolkit (all working today)
 
 | Tool | What it does | Needs |
 |------|-------------|-------|
+| `pipeline.py` | **One video → batch of finished, scheduled posts** | Python + ffmpeg |
+| `selftest.py` | Verifies every tool works on your machine | Python |
 | `fetch_footage.py` | Download source video from a URL into `footage/` | Python + yt-dlp |
 | `clip_finder.py` | Long video → best vertical clips | Python + ffmpeg |
 | `make_post.py` | Burns hook caption onto a clip + writes post text | Python + ffmpeg |
