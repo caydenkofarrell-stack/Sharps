@@ -1,0 +1,29 @@
+{
+  "_comment": "v1 source list. Motivational-first. Prioritize creators known to permit clipping with attribution. UFC/MMA is intentionally excluded from v1 (high copyright risk) - add later only as commentary/breakdown format. Fill in real channel URLs before running. 'enabled' gates whether the downloader pulls from a source.",
+  "sources": [
+    {
+      "id": "example_motivational_1",
+      "name": "Example Motivational Speaker",
+      "url": "https://www.youtube.com/@CHANGE_ME",
+      "category": "motivational",
+      "enabled": false,
+      "pull_frequency": "daily",
+      "max_clips_per_video": 4,
+      "attribution_text": "Clip: Example Speaker - shared with credit",
+      "clipping_permission": "unknown",
+      "notes": "Replace url with a real channel. Confirm clipping permission before enabling."
+    },
+    {
+      "id": "example_motivational_2",
+      "name": "Example Motivational Speaker 2",
+      "url": "https://www.youtube.com/@CHANGE_ME_2",
+      "category": "motivational",
+      "enabled": false,
+      "pull_frequency": "daily",
+      "max_clips_per_video": 3,
+      "attribution_text": "Clip: Example Speaker 2 - shared with credit",
+      "clipping_permission": "unknown",
+      "notes": "Replace url with a real channel."
+    }
+  ]
+}

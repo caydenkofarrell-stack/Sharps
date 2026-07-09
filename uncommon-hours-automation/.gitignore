@@ -1,0 +1,22 @@
+# Media + generated artifacts (keep the folders, ignore the contents)
+downloads/*
+processed/*
+!downloads/.gitkeep
+!processed/.gitkeep
+
+# Database + logs
+database/*.db
+database/*.db-journal
+logs/*.log
+!logs/.gitkeep
+
+# Secrets / API keys
+config/secrets.json
+config/*.key
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

@@ -1,0 +1,71 @@
+{
+  "brand": {
+    "name": "Uncommon Hours",
+    "handle": "@uncommonhours",
+    "primary_color": "#F5C518",
+    "text_color": "#FFFFFF",
+    "font_file": "",
+    "watermark_text": "UNCOMMON HOURS"
+  },
+  "paths": {
+    "downloads": "downloads",
+    "processed": "processed",
+    "database": "database/clips.db",
+    "logs": "logs"
+  },
+  "download": {
+    "max_videos_per_source_per_run": 3,
+    "min_duration_seconds": 120,
+    "max_duration_seconds": 5400,
+    "video_format": "bestvideo[height<=1080]+bestaudio/best[height<=1080]",
+    "skip_already_downloaded": true
+  },
+  "processing": {
+    "clips_per_video_min": 3,
+    "clips_per_video_max": 5,
+    "clip_length_seconds": {
+      "min": 20,
+      "max": 58,
+      "target": 45
+    },
+    "segment_strategy": "even_split",
+    "output_resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "vertical_style": "blurred_background",
+    "add_text_overlay": true,
+    "add_watermark": true,
+    "platform_variants": ["shorts", "tiktok", "reels"],
+    "require_transformation_before_post": true
+  },
+  "platform_specs": {
+    "shorts": {
+      "max_duration_seconds": 60,
+      "aspect_ratio": "9:16",
+      "notes": "Primary monetization target."
+    },
+    "tiktok": {
+      "max_duration_seconds": 90,
+      "aspect_ratio": "9:16",
+      "notes": "Creator Rewards only pays on videos over 1 minute."
+    },
+    "reels": {
+      "max_duration_seconds": 90,
+      "aspect_ratio": "9:16",
+      "notes": "Builds audience; no direct pay program."
+    }
+  },
+  "schedule": {
+    "download_time": "06:00",
+    "process_after_download": true,
+    "learning_time": "23:30",
+    "timezone": "America/New_York"
+  },
+  "posting": {
+    "enabled": false,
+    "dry_run": true,
+    "posts_per_day": 3,
+    "post_times": ["09:00", "13:00", "18:00"]
+  }
+}
